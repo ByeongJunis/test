@@ -1,14 +1,18 @@
 var webpack = require('webpack');
 var path = require('path');
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   mode: 'production',
-  entry: './main.js',
+  entry: './drivers-location-k6.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     libraryTarget: 'commonjs',
     filename: 'app.bundle.js',
   },
+  plugins: [
+    new Dotenv()
+  ],
   module: {
     rules: [
       {
